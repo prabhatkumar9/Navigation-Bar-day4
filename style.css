@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    overflow: hidden;
+}
+
+nav,
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    background-color: aliceblue;
+    min-height: 8vh;
+    padding: 0 50px;
+}
+
+.nav-links{
+    list-style: none;
+    width: 40%;
+}
+
+.nav-links li {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+#logo{
+    color: orangered;
+    font-size: 2em;
+}
+
+.burger div {
+    background-color: black;
+    height: 3px;
+    width: 25px;
+    /* border-radius: 10%; */
+    margin: 5px;
+    transition: all 0.5s ease;
+}
+
+.burger {
+    display: none;
+}
+
+
+@media screen and (max-width:768){
+    .nav-links{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        height: 92vh;
+        background-color:aliceblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 50%;
+        transform: translateX(100%);
+    }
+
+    .burger{
+        display: block;
+    }
+
+}
+
+.nav-click{
+    transform: translateX(0%);
+}
+
+.nav-links li a{
+    opacity: 0%;
+}
+
+.burger-click #line1 {
+ transform: rotate(45deg) translateX(5px);
+}
+
+.burger-click #line2 {
+    display: none;
+}
+
+.burger-click #line3 {
+    transform: rotate(-45deg) translateX(5px);
+}
+
+@keyframes navlinkanimation{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
